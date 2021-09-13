@@ -4,9 +4,9 @@ dist: bionic
 language: bash
 
 
-script:
-- bash DeployFroalaDemoApps.sh deploy
-- echo "Done the deployement"
+#script:
+#- bash DeployFroalaDemoApps.sh deploy
+#- echo "Done the deployement"
 
 
 before_install:
@@ -15,3 +15,9 @@ before_install:
 - chmod 600 ./deploy_key
 - echo -e "Host {SERVER_IP}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - ssh-add ./deploy_key
+
+after_script:
+- ssh -i ./deploy_key froala@10.220.201.231 cd /home/froala/travis/deploy && git pull origin master
+- cd Froala-ransari-Test
+- bash DeployFroalaDemoApps.sh deploy
+- echo "Done the deployement"
