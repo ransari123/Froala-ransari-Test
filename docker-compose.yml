@@ -5,6 +5,6 @@ services:
       context: wysiwyg-editor-node-sdk
       dockerfile: node_Dockerfile
     ports:
-      - 1502:3000
+      - 1599:3000
     container_name: node-demo
     restart: always

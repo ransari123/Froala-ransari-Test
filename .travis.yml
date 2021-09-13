@@ -5,7 +5,7 @@ language: bash
 
 
 script:
-- chmod u+x bash DeployFroalaDemoApps.sh deploy
+- bash DeployFroalaDemoApps.sh deploy
 - echo "Done the deployement"
 
 
